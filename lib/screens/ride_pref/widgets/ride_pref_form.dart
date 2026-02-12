@@ -1,4 +1,4 @@
-import 'package:blabla/screens/ride_pref/widgets/actions/bla_button.dart';
+import 'package:blabla/widgets/actions/bla_button.dart';
 import 'package:flutter/material.dart';
 import '../../../model/ride/locations.dart';
 import '../../../model/ride_pref/ride_pref.dart';

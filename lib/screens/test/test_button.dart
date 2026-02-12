@@ -1,5 +1,5 @@
 import 'package:blabla/theme/theme.dart';
-import 'package:blabla/screens/ride_pref/widgets/actions/bla_button.dart';
+import 'package:blabla/widgets/actions/bla_button.dart';
 import 'package:flutter/material.dart';
 
 class TestScreen extends StatelessWidget {
