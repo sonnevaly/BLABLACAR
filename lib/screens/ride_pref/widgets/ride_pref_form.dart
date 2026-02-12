@@ -4,6 +4,7 @@ import '../../../model/ride/locations.dart';
 import '../../../model/ride_pref/ride_pref.dart';
 import 'package:blabla/theme/theme.dart';
 import '../../../widgets/display/bla_divider.dart';
+import 'package:blabla/widgets/inputs/bla_location_picker.dart';
 
 ///
 /// A Ride Preference From is a view to select:
@@ -51,12 +52,32 @@ class _RidePrefFormState extends State<RidePrefForm> {
   // ----------------------------------
   // Handle events
   // ----------------------------------
-  void _onDeparturePressed() {
-    // TODO: Navigate to location selection screen
+  Future<void> _onDeparturePressed() async {
+    await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => BlaLocationPicker(
+          selectedLocation: departure,
+          onLocationSelected: (location) {
+            setState(() => departure = location);
+          },
+        ),
+      ),
+    );
   }
 
-  void _onArrivalPressed() {
-    // TODO: Navigate to location selection screen
+  Future<void> _onArrivalPressed() async {
+    await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => BlaLocationPicker(
+          selectedLocation: arrival,
+          onLocationSelected: (location) {
+            setState(() => arrival = location);
+          },
+        ),
+      ),
+    );
   }
 
   Future<void> _onDatePressed() async {
@@ -70,10 +91,6 @@ class _RidePrefFormState extends State<RidePrefForm> {
     if (picked != null) {
       setState(() => departureDate = picked);
     }
-  }
-
-  void _onSearchPressed() {
-    // TODO: Handle search action
   }
 
   // ----------------------------------
